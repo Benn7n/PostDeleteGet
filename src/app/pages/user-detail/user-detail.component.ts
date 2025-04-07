@@ -13,23 +13,12 @@ import { ActivatedRoute } from '@angular/router';
 export class UserDetailComponent {
   selectedUser: any;
 
-  constructor(public userService: UserService, private route: ActivatedRoute) {} // Agregar conexión al servicio
+  constructor(private route: ActivatedRoute) {} // Agregar conexión al servicio
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    this.getUser(id); //Llamar al nuevo getUser
+    //Llamar al nuevo getUser
   }
 
-  // Agregar un nuevo método getUser para obtener un usuario por ID
-  getUser(id: string) {
-    this.userService.getUser(id).subscribe({
-      next: (data) => {
-        console.log(data);
-        this.selectedUser = data;
-      },
-      error: (e) => {
-        console.log(e);
-      },
-    });
-  }
+  // Agregar un nuevo método getUser para obtener un usuario por I
 }
