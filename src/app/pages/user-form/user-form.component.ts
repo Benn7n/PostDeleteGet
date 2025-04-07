@@ -35,16 +35,5 @@ export class UserFormComponent {
   }
 
   // Nuevo método PostUser para llamar el método POST del servicio
-  postUser() {
-    console.log(this.userForm.value);
-
-    this.userService.postUser(this.userForm.value).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-      error: (e) => {
-        console.log(e);
-      },
-    });
-  }
+  
 }
